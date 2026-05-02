@@ -1,0 +1,179 @@
+/* ===== Page Layout ===== */
+
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* ===== Hero Section (Profile + Info) ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 0;
+  min-height: 60vh;
+  animation: fade-in-up 1s ease-out;
+  flex-direction: row-reverse;
+}
+
+/* Pink profile box - right middle, round */
+.profile-box {
+  flex-shrink: 0;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(135deg, #ff69b4, #ff1493, #ff69b4);
+  border-radius: 50%;
+  padding: 12px;
+  animation: glow-pulse 3s ease-in-out infinite, slide-in-right 1s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent 30%
+  );
+  animation: rotate-border 4s linear infinite;
+}
+
+.profile-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Info section to the left of profile */
+.info-section {
+  flex: 1;
+  padding-top: 10px;
+  animation: slide-in-left 1s ease-out;
+}
+
+.info-section .name {
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #ff69b4 25%,
+    #fff 50%,
+    #ff69b4 75%,
+    #fff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.info-section .bio {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.7;
+  max-width: 600px;
+  opacity: 0;
+  animation: fade-in-up 1s ease-out 0.5s forwards;
+}
+
+/* ===== Hobby Box ===== */
+.hobby-section {
+  margin-top: 50px;
+  opacity: 0;
+  animation: scale-pop 0.8s ease-out 1s forwards;
+}
+
+.hobby-box {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.15), rgba(255, 20, 147, 0.08));
+  border: 1px solid rgba(255, 105, 180, 0.35);
+  border-radius: 16px;
+  padding: 24px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(255, 105, 180, 0.25);
+}
+
+.hobby-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.hobby-box:hover::after {
+  left: 100%;
+}
+
+.hobby-box .hobby-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ff69b4;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.hobby-box .hobby-text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-box {
+    width: 220px;
+    height: 220px;
+  }
+
+  .info-section .name {
+    font-size: 2.5rem;
+  }
+
+  .info-section .bio {
+    font-size: 1.15rem;
+  }
+
+  .page-wrapper {
+    padding: 20px;
+  }
+}
