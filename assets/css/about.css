@@ -1,0 +1,206 @@
+/* ===== About Page Styles ===== */
+
+.about-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Greeting heading */
+.about-greeting {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: fade-in-up 1s ease-out 0.3s forwards;
+}
+
+.about-greeting .wave {
+  display: inline-block;
+  animation: wave-hand 1.5s ease-in-out 1.3s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-hand {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* Content card */
+.about-card {
+  max-width: 750px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.06), rgba(138, 43, 226, 0.04));
+  border: 1px solid rgba(255, 105, 180, 0.2);
+  border-radius: 24px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: scale-pop 0.8s ease-out 0.8s forwards;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff69b4, #8a2be2, #ff69b4);
+  z-index: -1;
+  opacity: 0;
+  animation: border-glow 3s ease-in-out 1.6s infinite;
+}
+
+@keyframes border-glow {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
+}
+
+/* Paragraphs with staggered entrance */
+.about-text {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.9;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.about-text:last-child {
+  margin-bottom: 0;
+}
+
+.about-text:nth-child(1) { animation-delay: 1.2s; }
+.about-text:nth-child(2) { animation-delay: 1.6s; }
+.about-text:nth-child(3) { animation-delay: 2.0s; }
+.about-text:nth-child(4) { animation-delay: 2.4s; }
+.about-text:nth-child(5) { animation-delay: 2.8s; }
+
+/* Highlight keywords */
+.highlight {
+  color: #ff69b4;
+  font-weight: 600;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff69b4, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline-grow 0.6s ease-out 3.2s forwards;
+}
+
+@keyframes underline-grow {
+  to { transform: scaleX(1); }
+}
+
+/* Goal section */
+.about-goal {
+  margin-top: 40px;
+  padding: 24px 32px;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.12), rgba(138, 43, 226, 0.08));
+  border-left: 3px solid #ff69b4;
+  border-radius: 0 12px 12px 0;
+  opacity: 0;
+  animation: slide-in-left 0.8s ease-out 3.2s forwards;
+}
+
+.about-goal .goal-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff69b4;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.about-goal .goal-text {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.7;
+}
+
+/* Navigation link */
+.nav-link {
+  position: fixed;
+  top: 24px;
+  left: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: rgba(255, 105, 180, 0.1);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  border-radius: 30px;
+  color: #ff69b4;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 100;
+  opacity: 0;
+  animation: fade-in-up 0.6s ease-out 0.2s forwards;
+}
+
+.nav-link:hover {
+  background: rgba(255, 105, 180, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+}
+
+.nav-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .arrow {
+  transform: translateX(-4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-wrapper {
+    padding: 80px 20px 40px;
+  }
+
+  .about-greeting {
+    font-size: 2rem;
+  }
+
+  .about-card {
+    padding: 30px 24px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    top: 16px;
+    left: 16px;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+}

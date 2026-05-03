@@ -158,6 +158,36 @@
   letter-spacing: 0.5px;
 }
 
+/* ===== Nav Link to About Page ===== */
+.nav-about-link {
+  position: fixed;
+  top: 24px;
+  right: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: rgba(255, 105, 180, 0.1);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  border-radius: 30px;
+  color: #ff69b4;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 100;
+  opacity: 0;
+  animation: fade-in-up 0.6s ease-out 3.8s forwards;
+}
+
+.nav-about-link:hover {
+  background: rgba(255, 105, 180, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero {
