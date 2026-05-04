@@ -158,34 +158,64 @@
   letter-spacing: 0.5px;
 }
 
-/* ===== Nav Link to About Page ===== */
-.nav-about-link {
-  position: fixed;
-  top: 24px;
-  right: 40px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  background: rgba(255, 105, 180, 0.1);
-  border: 1px solid rgba(255, 105, 180, 0.3);
-  border-radius: 30px;
-  color: #ff69b4;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  z-index: 100;
+/* ===== About Me Link Box (above Hobby) ===== */
+.about-link-section {
+  margin-top: 40px;
   opacity: 0;
-  animation: fade-in-up 0.6s ease-out 3.8s forwards;
+  animation: fade-in-up 0.8s ease-out 2.6s forwards;
 }
 
-.nav-about-link:hover {
-  background: rgba(255, 105, 180, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+.about-link-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 32px;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.12), rgba(138, 43, 226, 0.08));
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-link-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.08), transparent);
+  transition: left 0.5s ease;
+}
+
+.about-link-box:hover::before {
+  left: 100%;
+}
+
+.about-link-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(255, 105, 180, 0.25);
+  border-color: rgba(255, 105, 180, 0.5);
+}
+
+.about-link-icon {
+  font-size: 1.8rem;
+}
+
+.about-link-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff69b4;
+  letter-spacing: 1px;
+}
+
+.about-link-subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
 }
 
 /* ===== Responsive ===== */
