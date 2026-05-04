@@ -49,10 +49,48 @@
       </div>
     </div>
 
+    <!-- Journey sections -->
+    <div class="journey-sections">
+
+      <div class="journey-box journey-box-1">
+        <h2 class="journey-heading">The Journey So Far</h2>
+        <p class="journey-paragraph">I am a +2 student living in the scenic hills of Wayanad, Kerala. This website is a project I started purely for fun&mdash;a small digital corner where I can experiment and document my interests. When I'm not focused on my studies, I spend a significant amount of time as an active member of the <span class="hl-cyan">National Service Scheme (NSS)</span>, which keeps me connected to my community and teamwork.</p>
+      </div>
+
+      <div class="journey-box journey-box-2">
+        <h2 class="journey-heading">Open Worlds and Strategic Gaming</h2>
+        <p class="journey-paragraph">I have always been drawn to the freedom of open-world games. I prefer games that allow for exploration and personal choice over linear stories. Lately, I've been diving into the mechanics of upcoming titles like <span class="hl-purple">Neverness to Everness (NTE)</span>, specifically looking into squad strategies and character builds. I enjoy the challenge of figuring out how different game systems work and mastering the best way to play.</p>
+      </div>
+
+      <div class="journey-box journey-box-3">
+        <h2 class="journey-heading">Anime Lore and Epic Stories</h2>
+        <p class="journey-paragraph">Beyond gaming, I'm a big fan of modern shonen anime and the deep lore that comes with it. I've followed the journey of <span class="hl-orange">One Piece</span> closely&mdash;especially the hype around <span class="hl-orange">Gear Five</span>&mdash;and I'm always keeping up with the intense battles and power systems in <span class="hl-orange">Jujutsu Kaisen</span>. Whether it's discussing the strength of Sukuna or exploring character art, I enjoy stories that have a lot of depth and action.</p>
+      </div>
+
+      <div class="journey-box journey-box-4">
+        <h2 class="journey-heading">A Mix of Everything</h2>
+        <p class="journey-paragraph">Life for me is a balance of different worlds. I've spent time tackling the logic of <span class="hl-green">Class 11 Mathematics</span> while also exploring more thoughtful subjects, like the story of the biblical figure Job. Whether I'm solving a math problem, working on this site, or exploring a new map in a game, I'm always curious to see what comes next and how things fit together.</p>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- JavaScript -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Scroll-triggered reveal for journey boxes
+    const journeyBoxes = document.querySelectorAll('.journey-box');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    journeyBoxes.forEach(box => observer.observe(box));
+  </script>
 
 </body>
 </html>
