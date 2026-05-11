@@ -1,0 +1,115 @@
+/* ============================================
+   GITHUB PAGE — Pink Accent & Glow Effects
+   ============================================ */
+
+.name {
+  text-shadow:
+    0 0 10px rgba(255, 105, 180, 0.3),
+    0 0 40px rgba(255, 105, 180, 0.1);
+}
+
+.name::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #ff69b4, #ff1493, transparent);
+  border-radius: 2px;
+}
+
+.photo-frame {
+  animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+  0% {
+    box-shadow:
+      0 0 15px rgba(255, 105, 180, 0.15),
+      0 0 40px rgba(255, 105, 180, 0.05),
+      inset 0 0 15px rgba(255, 105, 180, 0.03);
+  }
+  100% {
+    box-shadow:
+      0 0 25px rgba(255, 105, 180, 0.3),
+      0 0 80px rgba(255, 105, 180, 0.15),
+      inset 0 0 25px rgba(255, 105, 180, 0.08);
+  }
+}
+
+.photo-frame::before {
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+
+.photo-frame::after {
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+
+.stat-number {
+  text-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+.section-title .accent {
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+}
+
+.btn-github:hover {
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+}
+
+.hero-photo {
+  position: relative;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border: 1px solid rgba(255, 105, 180, 0.1);
+  border-radius: 22px;
+  animation: pulseRing 4s ease-in-out infinite;
+}
+
+@keyframes pulseRing {
+  0%, 100% { opacity: 0; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 105, 180, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(255, 20, 147, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.heart {
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+a:focus-visible {
+  outline: 2px solid #ff69b4;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.card-header .icon {
+  filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.4));
+}
