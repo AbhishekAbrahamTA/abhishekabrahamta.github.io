@@ -1,0 +1,181 @@
+/* ============================================
+   GITHUB PAGE — Responsive Breakpoints
+   ============================================ */
+
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .name {
+    font-size: 2.8rem;
+  }
+
+  .name::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bio {
+    border-left: none;
+    border-bottom: 3px solid #ff69b4;
+    padding-left: 0;
+    padding-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .hero-photo {
+    order: -1;
+  }
+
+  .stat-grid {
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .graph-grid {
+    grid-template-columns: repeat(26, 1fr);
+  }
+
+  .repos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .bio {
+    font-size: 1.1rem;
+  }
+
+  .photo-frame {
+    width: 220px;
+    height: 260px;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skill-card {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .github-section,
+  .skills-section {
+    padding: 3rem 0;
+  }
+
+  .graph-grid {
+    grid-template-columns: repeat(13, 1fr);
+  }
+
+  .github-corner svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .back-home {
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .name {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+
+  .photo-frame {
+    width: 180px;
+    height: 220px;
+  }
+
+  .btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.85rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1300px;
+  }
+
+  .name {
+    font-size: 4.5rem;
+  }
+
+  .bio {
+    font-size: 1.4rem;
+  }
+
+  .photo-frame {
+    width: 340px;
+    height: 380px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .photo-frame {
+    animation: none;
+  }
+}
