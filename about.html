@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Abhishek Abraham T A</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/particles.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+
+  <!-- Background layers -->
+  <div class="gradient-mesh"></div>
+  <div class="particles-container"></div>
+
+  <!-- Navigation back to home -->
+  <a href="index.html" class="nav-link">
+    <span class="arrow">&larr;</span> Home
+  </a>
+
+  <!-- Main content -->
+  <div class="about-wrapper">
+
+    <h1 class="about-greeting">Hi, I'm Abhishek <span class="wave">&#x1F44B;</span></h1>
+
+    <div class="about-card">
+      <p class="about-text">
+        I'm a beginner in <span class="highlight">web development</span>, currently learning how to build websites using HTML, CSS, and GitHub. I enjoy experimenting with new tools and creating simple projects to improve my skills.
+      </p>
+      <p class="about-text">
+        I recently built my first live website using <span class="highlight">GitHub Pages</span>, and I'm excited to keep learning and improving step by step.
+      </p>
+      <p class="about-text">
+        Outside of coding, I enjoy exploring new apps, games, and technology.
+      </p>
+
+      <div class="about-goal">
+        <div class="goal-label">My Goal</div>
+        <div class="goal-text">To become a better developer and create useful, creative projects.</div>
+      </div>
+    </div>
+
+    <!-- Journey sections -->
+    <div class="journey-sections">
+
+      <div class="journey-box journey-box-1">
+        <h2 class="journey-heading">The Journey So Far</h2>
+        <p class="journey-paragraph">I am a +2 student living in the scenic hills of Wayanad, Kerala. This website is a project I started purely for fun&mdash;a small digital corner where I can experiment and document my interests. When I'm not focused on my studies, I spend a significant amount of time as an active member of the <a href="https://nss.gov.in" target="_blank" class="hl-cyan nss-link">National Service Scheme (NSS)</a>, which keeps me connected to my community and teamwork.</p>
+      </div>
+
+      <div class="journey-box journey-box-2">
+        <h2 class="journey-heading">Open Worlds and Strategic Gaming</h2>
+        <p class="journey-paragraph">I have always been drawn to the freedom of open-world games. I prefer games that allow for exploration and personal choice over linear stories. Lately, I've been diving into the mechanics of upcoming titles like <span class="hl-purple">Neverness to Everness (NTE)</span>, specifically looking into squad strategies and character builds. I enjoy the challenge of figuring out how different game systems work and mastering the best way to play.</p>
+      </div>
+
+      <div class="journey-box journey-box-3">
+        <h2 class="journey-heading">Anime Lore and Epic Stories</h2>
+        <p class="journey-paragraph">Beyond gaming, I'm a big fan of modern shonen anime and the deep lore that comes with it. I've followed the journey of <span class="hl-orange">One Piece</span> closely&mdash;especially the hype around <span class="hl-orange">Gear Five</span>&mdash;and I'm always keeping up with the intense battles and power systems in <span class="hl-orange">Jujutsu Kaisen</span>. Whether it's discussing the strength of Sukuna or exploring character art, I enjoy stories that have a lot of depth and action.</p>
+      </div>
+
+      <div class="journey-box journey-box-4">
+        <h2 class="journey-heading">A Mix of Everything</h2>
+        <p class="journey-paragraph">Life for me is a balance of different worlds. I've spent time tackling the logic of <span class="hl-green">Class 11 Mathematics</span> while also exploring more thoughtful subjects, like the story of the biblical figure Job. Whether I'm solving a math problem, working on this site, or exploring a new map in a game, I'm always curious to see what comes next and how things fit together.</p>
+      </div>
+
+    </div>
+
+    <!-- GitHub Stats -->
+    <div class="github-stats-section">
+      <h2 class="stats-heading">&#x1F4CA; My GitHub Stats</h2>
+      <div class="stats-grid">
+        <div class="stats-card">
+          <img src="https://github-readme-stats.vercel.app/api?username=AbhishekAbrahamTA&show_icons=true&theme=radical&bg_color=0d1117&hide_border=true&title_color=ff69b4&icon_color=ff69b4&text_color=ffffff" alt="GitHub Stats" loading="lazy">
+        </div>
+        <div class="stats-card">
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbhishekAbrahamTA&layout=compact&theme=radical&bg_color=0d1117&hide_border=true&title_color=ff69b4&text_color=ffffff" alt="Top Languages" loading="lazy">
+        </div>
+        <div class="stats-card stats-card-wide">
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhishekAbrahamTA&theme=radical&background=0d1117&hide_border=true&ring=ff69b4&fire=ff1493&currStreakLabel=ff69b4" alt="GitHub Streak" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Scroll-triggered reveal for journey boxes and stats
+    const journeyBoxes = document.querySelectorAll('.journey-box, .github-stats-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    journeyBoxes.forEach(box => observer.observe(box));
+  </script>
+
+</body>
+</html>
