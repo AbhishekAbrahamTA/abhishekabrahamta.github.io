@@ -115,6 +115,25 @@
   50% { opacity: 0; }
 }
 
+/* Card popup — bouncy entrance */
+@keyframes card-popup {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.3) rotate(-5deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.08) rotate(1deg);
+  }
+  70% {
+    transform: translateY(5px) scale(0.96) rotate(-0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
 /* Scale pop */
 @keyframes scale-pop {
   0% {
